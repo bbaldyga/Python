@@ -124,4 +124,38 @@ print_model(unprinted_design[:],completed_desigh)
 show_completed_models(completed_desigh)
 
 #Passing arbitaty numbert of arguments
-#page 151
+def making_pizza(*toppings):
+    """Print the list fo toppings that have been requested"""
+    print("\nMaking a pizza with the following toppings:")
+    for topping in toppings:
+        print("-"+topping)
+making_pizza("pepperoni")
+making_pizza("pepperoni","mushrooms","Extra Thicc")
+#Mixing positional and arbitary arguments
+def making_pizza(size,*toppings):
+    """Print the list fo toppings that have been requested"""
+    print("\nMaking a "+str(size)+ "-inch pizza with the following toppings:")
+    for topping in toppings:
+        print("-"+topping)
+making_pizza(12,"pepperoni")
+making_pizza(123,"pepperoni","mushrooms","Extra Thicc")
+
+#using arbitary Keyword arguments
+def build_profile(first,last,**user_info):
+    """Build a dictionary containing everything we know about a user"""
+    profile = {}
+    profile['first_name'] = first
+    profile['last_name'] = last
+    for key, value in user_info.items():
+        profile[key] = value
+    return profile
+
+user_profile = build_profile('albert',
+                            'einstein',
+                            location='princeton',
+                            field='physic')
+print(user_profile)
+
+#Storing your function in module
+import pizza
+pizza.make_pizza(17,'peperoni')
