@@ -157,5 +157,5 @@ user_profile = build_profile('albert',
 print(user_profile)
 
 #Storing your function in module
-import pizza
-pizza.make_pizza(17,'peperoni')
+#import pizza
+#pizza.make_pizza(17,'peperoni')
